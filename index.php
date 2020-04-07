@@ -27,7 +27,7 @@ $students = getAllUsers("data.json");
     <?php if (isset($students)): ?>
         <?php foreach ($students as $index => $student): ?>
             <tr>
-                <td><?php echo $index + 1 ?></td>
+                <td><?php echo $index ?></td>
                 <td><?php echo $student->name ?></td>
                 <td><?php echo $student->age ?></td>
                 <td><?php echo $student->address ?></td>

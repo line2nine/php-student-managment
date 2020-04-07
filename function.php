@@ -23,13 +23,9 @@ function deleteStudent($index, $filePath){
     file_put_contents($filePath, $dataNewJson);
 }
 
-function editStudent($index, $filePath){
+function editStudent($index, $data, $filePath){
     $dataArr = getData($filePath);
-    foreach ($dataArr as $item => $value){
-        if ($index == $item){
-
-        }
-    }
+    $dataArr[$index] = $data;
     $dataNewJson = json_encode($dataArr);
     file_put_contents($filePath, $dataNewJson);
 }
@@ -37,4 +33,15 @@ function editStudent($index, $filePath){
 function getStudentByIndex($index, $filePath) {
     $dataArr = getData($filePath);
     return $dataArr[$index];
+}
+
+function searchName($keyword, $filePath){
+    $dataArr = getData($filePath);
+    $arr = [];
+    foreach ($dataArr as $item) {
+        if ($item->name == $keyword){
+            array_push($arr, $item);
+        }
+    }
+    return $arr;
 }

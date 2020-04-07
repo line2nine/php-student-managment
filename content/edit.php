@@ -13,7 +13,7 @@ $student = getStudentByIndex($index, "../data.json")
     <title>Document</title>
 </head>
 <body>
-<form action="../action/update.php" method="post">
+<form action="../action/update.php?index=<?php echo $index ?>" method="post">
     Name:
     <input type="text" name="name" value="<?php echo $student->name ?>">
     Age:
